@@ -15,8 +15,8 @@ coord_x, coord_y = np.mgrid[:xmax,:ymax]
 
 def draw_circle(x,y,r,array,temperature):
     circle = (coord_x - x) ** 2 + (coord_y - y) ** 2     
-    donut = (circle < r) * temperature
-    array[:,:,0] = np.where(donut>0,donut,array[:,:,0])
+    circle = (circle < r) * temperature
+    array[:,:,0] = np.where(circle>0,circle,array[:,:,0])
     return array
 
 def divergence(f):
